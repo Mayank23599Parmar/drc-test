@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Shreyansh",
+        "email": "shreyansh@gmail.com",
+        "Password": "123",
+        "contact": 7201928142,
+        "todos": [
+            {
+                "id": 1,
+                "title": "Todo 1",
+                "description": "Hello from todo 1",
+                "time": 1685035395985
+            },
+            {
+                "id": 2,
+                "title": "Todo 2",
+                "description": "Hello from todo 2",
+                "time": 1685035442116
+            }
+        ]
+    },
+    {
+        "name": "Shreyansh 2",
+        "email": "shreyansh2@gmail.com",
+        "Password": "1234",
+        "contact": 7201928142,
+        "todos": [
+            {
+                "id": 1,
+                "title": "Todo 1",
+                "description": "Hello from todo 1",
+                "time": 1685035395985
+            },
+            {
+                "id": 2,
+                "title": "Todo 2",
+                "description": "Hello from todo 2",
+                "time": 1685035442116
+            }
+        ]
+    }
+]
