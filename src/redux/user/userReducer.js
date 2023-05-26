@@ -18,7 +18,6 @@ const INITIAL_VALUE = {
     },
   ],
   loggedUser: {},
-  // blogLoading: true,
 };
 const userReducer = (state = INITIAL_VALUE, action) => {
   switch (action.type) {
@@ -40,7 +39,7 @@ const userReducer = (state = INITIAL_VALUE, action) => {
     case userTypes.SET_DELETE_USER_TODO:
       return {
         ...state,
-        todosData: [action.payload],
+        todosData: action.payload,
       };
     case userTypes.SET_EDIT_USER_TODO:
       return {

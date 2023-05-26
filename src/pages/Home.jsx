@@ -1,24 +1,22 @@
-import { useEffect, useState } from 'react';
-import users from '../constants/Users.json';
-import { useSelector, useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-import { deleteUserTodo } from '../redux/user/userActions';
+import { useEffect, useState } from "react";
+import users from "../constants/Users.json";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
+import { deleteUserTodo } from "../redux/user/userActions";
 const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const loggedUser = useSelector((state) => state.user.loggedUser);
   const todosData = useSelector((state) => state.user.todosData);
   const UserTodoData = todosData.filter((cv) => cv.userId === loggedUser.id);
+
   const deletedTodo = (selectedTodo, onClose) => {
-    dispatch(
-      deleteUserTodo(
-        todosData.filter(
-          (cv) => cv.userId !== selectedTodo.userId && cv.id !== selectedTodo.id
-        )
-      )
-    );
+    const updatedTodoData = UserTodoData.filter((cv) => {
+      return selectedTodo.id !== cv.id;
+    });
+    dispatch(deleteUserTodo(updatedTodoData));
     onClose();
   };
   const showDeletePopup = (selectedTodo) => {
@@ -87,7 +85,7 @@ const Home = () => {
   };
   useEffect(() => {
     if (Object.keys(loggedUser).length <= 0) {
-      navigate('/login');
+      navigate("/login");
     }
   }, []);
   return (
