@@ -2,7 +2,7 @@ import userTypes from './userTypes';
 const INITIAL_VALUE = {
   userData: [
     {
-      name: 'Shreyansh',
+      name: 'Mayank',
       email: 'mayanklucent@gmail.com',
       password: '123456',
       id: 123,
